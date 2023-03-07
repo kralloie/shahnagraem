@@ -36,3 +36,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     My_Resources.qrc
 RC_ICONS = out.ico
+
+DISTFILES += \
+    .gitignore
