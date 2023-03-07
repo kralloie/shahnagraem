@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>790</width>
+    <height>644</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Shahnagraem</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>340</y>
+      <width>801</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(51, 34, 76, 200);
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="generateButton">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>70</y>
+       <width>211</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 25pt &quot;Bahnschrift&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(29, 27, 27);
+border-radius: 10px;
+border: 2px solid;
+border-color: rgb(54, 26, 77);</string>
+     </property>
+     <property name="text">
+      <string>Generate</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="openTargetFileButton">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>70</y>
+       <width>231</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(29, 27, 27);
+border-radius: 10px;
+border: 2px solid;
+border-color: rgb(54, 26, 77);</string>
+     </property>
+     <property name="text">
+      <string>Select Target File</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../build-WordListMaker-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/debug/qmake_qmake_qm_files.qrc">
+       <normaloff>:/i18n/WordListMaker_en_US.qm</normaloff>:/i18n/WordListMaker_en_US.qm</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="wordListPathlb">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>130</y>
+       <width>431</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 9pt &quot;Unispace&quot;;
+background-color: argb(39, 45, 61,0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="targetPathlb">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>20</y>
+       <width>431</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 9pt &quot;Unispace&quot;;
+background-color: argb(39, 45, 61,0);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="openFileButton">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>180</y>
+       <width>231</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(29, 27, 27);
+border-radius: 10px;
+border: 2px solid;
+border-color: rgb(54, 26, 77);</string>
+     </property>
+     <property name="text">
+      <string>Select Word List</string>
+     </property>
+    </widget>
+    <zorder>generateButton</zorder>
+    <zorder>openTargetFileButton</zorder>
+    <zorder>openFileButton</zorder>
+    <zorder>targetPathlb</zorder>
+    <zorder>wordListPathlb</zorder>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>30</y>
+      <width>811</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(51, 34, 76, 200);
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLineEdit" name="hashInput">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>70</y>
+       <width>231</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 0, 150);
+border-radius:5px;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="openWordList">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>180</y>
+       <width>231</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(29, 27, 27);
+border-radius: 10px;
+border: 2px solid;
+border-color: rgb(54, 26, 77);</string>
+     </property>
+     <property name="text">
+      <string>Select Word List</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="openHashList">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>70</y>
+       <width>231</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(29, 27, 27);
+border-radius: 10px;
+border: 2px solid;
+border-color: rgb(54, 26, 77);</string>
+     </property>
+     <property name="text">
+      <string>Select Hash List</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="indicationLabel">
+     <property name="geometry">
+      <rect>
+       <x>500</x>
+       <y>20</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
+background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string>Paste your hash here</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="findButton">
+     <property name="geometry">
+      <rect>
+       <x>520</x>
+       <y>120</y>
+       <width>211</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 25pt &quot;Bahnschrift&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(29, 27, 27);
+border-radius: 10px;
+border: 2px solid;
+border-color: rgb(54, 26, 77);
+</string>
+     </property>
+     <property name="text">
+      <string>Find</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="hashListPathlb">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>20</y>
+       <width>431</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 9pt &quot;Unispace&quot;;
+background-color: argb(39, 45, 61,0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="wordListPathlb_2">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>130</y>
+       <width>431</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 700 9pt &quot;Unispace&quot;;
+background-color: argb(39, 45, 61,0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <zorder>hashListPathlb</zorder>
+    <zorder>hashInput</zorder>
+    <zorder>openWordList</zorder>
+    <zorder>openHashList</zorder>
+    <zorder>indicationLabel</zorder>
+    <zorder>findButton</zorder>
+    <zorder>wordListPathlb_2</zorder>
+   </widget>
+   <widget class="QFrame" name="background_frame">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>-21</y>
+      <width>831</width>
+      <height>631</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>310</y>
+       <width>341</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="indicationLabel_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>221</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 19pt &quot;Bahnschrift&quot;;
+background-color:rgb(0,0,0,0);
+background-image:none;</string>
+      </property>
+      <property name="text">
+       <string>Encryption method:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="comboBox">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>10</y>
+        <width>81</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 9pt &quot;Bahnschrift&quot;;
+background-color: rgb(54, 26, 77);
+border-radius:5px;
+color: rgb(255,255,255);
+
+
+</string>
+      </property>
+      <property name="currentText">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <zorder>background_frame</zorder>
+   <zorder>frame</zorder>
+   <zorder>frame_2</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>790</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="../build-WordListMaker-Desktop_Qt_6_4_2_MSVC2019_64bit-Debug/debug/qmake_qmake_qm_files.qrc"/>
+ </resources>
+ <connections/>
+</ui>
