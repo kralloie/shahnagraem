@@ -211,8 +211,11 @@ void MainWindow::on_generateButton_clicked()
     while (!wordListStream.atEnd())
     {
         QString line = wordListStream.readLine();
-        QString data = hashFunc(line.toStdString());
-        targetFileStream << data << '\n';
+        if(!line.isEmpty())
+        {
+            QString data = hashFunc(line.toStdString());
+            targetFileStream << data << '\n';
+        }
     }
 
     targetFile.close();
@@ -225,7 +228,7 @@ void MainWindow::on_openHashList_clicked()
 {
     hashListPath_Find = QFileDialog::getOpenFileName(this,"Open File","","*.txt");
     hashListFile_Find.setFileName(hashListPath_Find);
-    hashListFile_Find.open(QIODevice::ReadOnly | QIODevice::Text);
+    hashListFile_Find.open(QIODevice::ReadWrite | QIODevice::Text | QIODevice::Truncate);
     hashListOpen = hashListFile_Find.isOpen();
     ui->hashListPathlb->setText(hashListPath_Find);
 }
