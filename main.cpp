@@ -8,7 +8,12 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    a.setStyleSheet("QMessageBox QLabel {color: rgb(0,0,0)} QMessageBox QPushButton {color: rgb(0,0,0)}");
+    QFile styleSheetFile(":/styleSheet.qss");
+    styleSheetFile.open(QIODevice::ReadOnly | QIODevice::Text);
+    QTextStream styleSheetStream(&styleSheetFile);
+    QString styleSheet = styleSheetStream.readAll();
+
+    a.setStyleSheet(styleSheet);
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();

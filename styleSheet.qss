@@ -1,0 +1,20 @@
+QMessageBox QLabel
+{
+    color: rgb(0,0,0)
+}
+
+QMessageBox QPushButton
+{
+    color: rgb(0,0,0)
+}
+
+#background_frame
+{
+    background-image: url(:/shahnagraem_background.png)
+}
+
+#frame_3
+{
+    background-image: url(none);
+    background-color: rgba(51, 34, 76, 200);
+}

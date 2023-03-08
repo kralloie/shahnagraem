@@ -143,9 +143,6 @@ MainWindow::MainWindow(QWidget *parent)
     darkPalette.setColor(QPalette::WindowText, Qt::white);
     QApplication::setPalette(darkPalette);
 
-    ui->background_frame->setStyleSheet("background-image: url(:/shahnagraem_background.png)");
-    ui->frame_3->setStyleSheet("background-image: url(none);background-color: rgba(51, 34, 76, 200);");
-
     ui->comboBox->addItem("SHA160");
     ui->comboBox->addItem("MD5");
     ui->comboBox->addItem("SHA256");
