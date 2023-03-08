@@ -30,6 +30,9 @@ Your program should look like this before pressing the generate button:
 
 ![Generate example](../assets/generateexample.png?raw=true)
 
+Now your target file should look like this:
+
+![Target file example](../assets/targetexample.png?raw=true)
 
 
 
