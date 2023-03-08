@@ -9,4 +9,4 @@ The UI is not the best but I don't like doing front-end stuff.
 
 ###Set a target file (.txt where you want the encrypted words) and word list (your .txt with the words you want to encrypt).
 
-This is what a word list should look like for example: ![Word list example](https://imgur.com/a/eufjA4k)
+This is what a word list should look like for example: https://imgur.com/a/eufjA4k
