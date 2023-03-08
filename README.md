@@ -5,8 +5,31 @@ The UI is not the best but I don't like doing front-end stuff.
 
 
 
-##How to use
+## How to use
 
-###Set a target file (.txt where you want the encrypted words) and word list (your .txt with the words you want to encrypt).
+### Set a target file (.txt where you want the encrypted words) and word list (your .txt with the words you want to encrypt).
 
-This is what a word list should look like for example: https://imgur.com/gallery/eufjA4k
+This is what a word list should look like for example:
+
+![Word list example](../assets/wordlistexample.png?raw=true)
+
+After pressing the buttons for choosing the files and choosing them it should look like this:
+
+![Files chosen example](../assets/pathexamples.png?raw=true)
+
+
+### Choose the encryption method you want your word list to be encrypted with
+(your target file will receive the word list words encrypted with the method you choose)
+
+![Encryption methods](../assets/encryptionmethodexample.png?raw=true)
+
+
+### Press generate button
+
+Your program should look like this before pressing the generate button:
+
+![Generate example](../assets/generateexample.png?raw=true)
+
+
+
+
