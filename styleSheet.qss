@@ -27,7 +27,12 @@ QMessageBox QPushButton
     background-color: rgb(29, 27, 27);
     border-radius: 10px;
     border: 2px solid;
-    border-color: rgb(54, 26, 77);
+    border-color: rgb(182, 0, 220);
+}
+
+#openTargetFileButton:hover, #openHashList:hover, #openWordList:hover, #openFileButton:hover, #findButton:hover, #generateButton:hover
+{
+    color:rgb(162, 1, 203);
 }
 
 #findButton, #generateButton
@@ -37,7 +42,7 @@ QMessageBox QPushButton
     background-color: rgb(29, 27, 27);
     border-radius: 10px;
     border: 2px solid;
-    border-color: rgb(54, 26, 77);
+    border-color: rgb(182, 0, 220);
 }
 
 #comboBox
@@ -59,4 +64,10 @@ QMessageBox QPushButton
 {
     background-color: rgba(0, 0, 0, 150);
     border-radius:5px;
+}
+
+#comboBox
+{
+    border-radius:2px;
+    border-color: rgb(182,0,220);
 }
