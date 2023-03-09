@@ -190,6 +190,7 @@ void MainWindow::on_generateButton_clicked()
     QFile wordListFileBase(wordListPath_Gen);
     targetFile.open(QIODevice::ReadWrite | QIODevice::Text);
     wordListFileBase.open(QIODevice::ReadWrite | QIODevice::Text);
+    targetFile.resize(0);
     QTextStream wordListStream(&wordListFileBase);
     QTextStream targetFileStream(&targetFile);
     hashFunc = methodMap[ui->comboBox->currentText()];
