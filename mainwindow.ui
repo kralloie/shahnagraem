@@ -253,8 +253,7 @@ background-color: argb(39, 45, 61,0);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Find</string>
@@ -339,7 +338,7 @@ background-color: argb(39, 45, 61,0);</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>310</y>
+       <y>320</y>
        <width>341</width>
        <height>41</height>
       </rect>
@@ -382,10 +381,7 @@ background-color: argb(39, 45, 61,0);</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">
-
-
-</string>
+       <string notr="true"/>
       </property>
       <property name="currentText">
        <string/>
