@@ -8,13 +8,55 @@ QMessageBox QPushButton
     color: rgb(0,0,0)
 }
 
+
+#frame_1, #frame_2, #frame_3
+{
+    background-image: url(none);
+    background-color: rgba(51, 34, 76, 200);
+}
+
 #background_frame
 {
     background-image: url(:/shahnagraem_background.png)
 }
 
-#frame_3
+#openTargetFileButton, #openHashList, #openWordList, #openFileButton
 {
-    background-image: url(none);
-    background-color: rgba(51, 34, 76, 200);
+    font: 20pt "Bahnschrift";
+    color: rgb(255, 255, 255);
+    background-color: rgb(29, 27, 27);
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: rgb(54, 26, 77);
+}
+
+#findButton, #generateButton
+{
+    font: 25pt "Bahnschrift";
+    color: rgb(255, 255, 255);
+    background-color: rgb(29, 27, 27);
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: rgb(54, 26, 77);
+}
+
+#comboBox
+{
+    font: 9pt "Bahnschrift";
+    background-color: rgb(54, 26, 77);
+    border-radius:5px;
+    color: rgb(255,255,255);
+}
+
+#encryptionIndication, #hashIndication
+{
+    font: 19pt "Bahnschrift";
+    background-color:rgb(0,0,0,0);
+    background-image:none;
+}
+
+#hashInput
+{
+    background-color: rgba(0, 0, 0, 150);
+    border-radius:5px;
 }

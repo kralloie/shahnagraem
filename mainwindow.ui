@@ -20,7 +20,7 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="frame_1">
     <property name="geometry">
      <rect>
       <x>-10</x>
@@ -36,8 +36,7 @@
      </sizepolicy>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(51, 34, 76, 200);
-</string>
+     <string notr="true"/>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -55,12 +54,7 @@
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 25pt &quot;Bahnschrift&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(29, 27, 27);
-border-radius: 10px;
-border: 2px solid;
-border-color: rgb(54, 26, 77);</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Generate</string>
@@ -76,12 +70,7 @@ border-color: rgb(54, 26, 77);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(29, 27, 27);
-border-radius: 10px;
-border: 2px solid;
-border-color: rgb(54, 26, 77);</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Select Target File</string>
@@ -163,22 +152,17 @@ background-color: argb(39, 45, 61,0);
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(29, 27, 27);
-border-radius: 10px;
-border: 2px solid;
-border-color: rgb(54, 26, 77);</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Select Word List</string>
      </property>
     </widget>
     <zorder>generateButton</zorder>
-    <zorder>openTargetFileButton</zorder>
     <zorder>openFileButton</zorder>
     <zorder>targetPathlb</zorder>
     <zorder>wordListPathlb</zorder>
+    <zorder>openTargetFileButton</zorder>
    </widget>
    <widget class="QFrame" name="frame_2">
     <property name="geometry">
@@ -190,8 +174,7 @@ border-color: rgb(54, 26, 77);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgba(51, 34, 76, 200);
-</string>
+     <string notr="true"/>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -209,8 +192,7 @@ border-color: rgb(54, 26, 77);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(0, 0, 0, 150);
-border-radius:5px;</string>
+      <string notr="true"/>
      </property>
     </widget>
     <widget class="QPushButton" name="openWordList">
@@ -223,12 +205,7 @@ border-radius:5px;</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(29, 27, 27);
-border-radius: 10px;
-border: 2px solid;
-border-color: rgb(54, 26, 77);</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Select Word List</string>
@@ -244,18 +221,13 @@ border-color: rgb(54, 26, 77);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(29, 27, 27);
-border-radius: 10px;
-border: 2px solid;
-border-color: rgb(54, 26, 77);</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Select Hash List</string>
      </property>
     </widget>
-    <widget class="QLabel" name="indicationLabel">
+    <widget class="QLabel" name="hashIndication">
      <property name="geometry">
       <rect>
        <x>500</x>
@@ -265,8 +237,7 @@ border-color: rgb(54, 26, 77);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 20pt &quot;Bahnschrift&quot;;
-background-color: rgba(255, 255, 255, 0);</string>
+      <string notr="true"/>
      </property>
      <property name="text">
       <string>Paste your hash here</string>
@@ -282,12 +253,7 @@ background-color: rgba(255, 255, 255, 0);</string>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 25pt &quot;Bahnschrift&quot;;
-color: rgb(255, 255, 255);
-background-color: rgb(29, 27, 27);
-border-radius: 10px;
-border: 2px solid;
-border-color: rgb(54, 26, 77);
+      <string notr="true">
 </string>
      </property>
      <property name="text">
@@ -350,7 +316,7 @@ background-color: argb(39, 45, 61,0);</string>
     <zorder>hashInput</zorder>
     <zorder>openWordList</zorder>
     <zorder>openHashList</zorder>
-    <zorder>indicationLabel</zorder>
+    <zorder>hashIndication</zorder>
     <zorder>findButton</zorder>
     <zorder>wordListPathlb_2</zorder>
    </widget>
@@ -387,7 +353,7 @@ background-color: argb(39, 45, 61,0);</string>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QLabel" name="indicationLabel_2">
+     <widget class="QLabel" name="encryptionIndication">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -397,9 +363,7 @@ background-color: argb(39, 45, 61,0);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 19pt &quot;Bahnschrift&quot;;
-background-color:rgb(0,0,0,0);
-background-image:none;</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Encryption method:</string>
@@ -418,10 +382,7 @@ background-image:none;</string>
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 9pt &quot;Bahnschrift&quot;;
-background-color: rgb(54, 26, 77);
-border-radius:5px;
-color: rgb(255,255,255);
+       <string notr="true">
 
 
 </string>
@@ -433,7 +394,7 @@ color: rgb(255,255,255);
     </widget>
    </widget>
    <zorder>background_frame</zorder>
-   <zorder>frame</zorder>
+   <zorder>frame_1</zorder>
    <zorder>frame_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
