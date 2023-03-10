@@ -342,7 +342,7 @@ background-color: argb(39, 45, 61,0);</string>
       <rect>
        <x>20</x>
        <y>320</y>
-       <width>341</width>
+       <width>371</width>
        <height>41</height>
       </rect>
      </property>
@@ -376,7 +376,7 @@ background-color: argb(39, 45, 61,0);</string>
        <rect>
         <x>240</x>
         <y>10</y>
-        <width>81</width>
+        <width>121</width>
         <height>21</height>
        </rect>
       </property>
@@ -394,9 +394,9 @@ background-color: argb(39, 45, 61,0);</string>
     <widget class="QFrame" name="frame_4">
      <property name="geometry">
       <rect>
-       <x>360</x>
+       <x>390</x>
        <y>320</y>
-       <width>241</width>
+       <width>281</width>
        <height>41</height>
       </rect>
      </property>
@@ -412,9 +412,9 @@ background-color: argb(39, 45, 61,0);</string>
      <widget class="QLabel" name="inputModeIndication">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>40</x>
         <y>10</y>
-        <width>141</width>
+        <width>121</width>
         <height>21</height>
        </rect>
       </property>
@@ -428,7 +428,7 @@ background-color: argb(39, 45, 61,0);</string>
      <widget class="QComboBox" name="inputModeBox">
       <property name="geometry">
        <rect>
-        <x>145</x>
+        <x>175</x>
         <y>10</y>
         <width>81</width>
         <height>21</height>
