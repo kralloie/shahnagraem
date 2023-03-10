@@ -275,6 +275,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     this->setWindowFlags(Qt::Window);
     this->setFixedSize(790,620);
+
+    connect(ui->hashBox,&QComboBox::currentIndexChanged, ui->inputText, &QPlainTextEdit::textChanged);
 }
 
 MainWindow::~MainWindow()
@@ -415,4 +417,5 @@ void MainWindow::on_inputModeBox_currentIndexChanged(int index)
     ui->frame_5->setVisible(index);
     ui->frame_1->setHidden(index);
 }
+
 

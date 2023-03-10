@@ -20,9 +20,6 @@
 #include <iostream>
 #include <iomanip>
 
-using JSON = nlohmann::json;
-#define JSON_INDENT 4
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -31,48 +28,49 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    public:
+        MainWindow(QWidget *parent = nullptr);
+        ~MainWindow();
 
-private slots:
+    private slots:
 
-    void on_openFileButton_clicked();
+        void on_openFileButton_clicked();
 
-    void on_openTargetFileButton_clicked();
+        void on_openTargetFileButton_clicked();
 
-    void on_generateButton_clicked();
+        void on_generateButton_clicked();
 
-    void on_openHashList_clicked();
+        void on_openHashList_clicked();
 
-    void on_openWordList_clicked();
+        void on_openWordList_clicked();
 
-    void on_hashInput_editingFinished();
+        void on_hashInput_editingFinished();
 
-    void on_findButton_clicked();
+        void on_findButton_clicked();
 
-    void on_inputText_textChanged();
+        void on_inputText_textChanged();
 
-    void on_inputModeBox_currentIndexChanged(int index);
+        void on_inputModeBox_currentIndexChanged(int index);
 
-private:
-    Ui::MainWindow *ui;
+    private:
+        Ui::MainWindow *ui;
 
-    //Wordlist generator variables.
-    QString wordListPath_Gen;
-    QString targetFilePath_Gen;
+        //Wordlist generator variables.
+        QString wordListPath_Gen;
+        QString targetFilePath_Gen;
 
-    //Find coincidence function variables.
-    QString hashListPath_Find;
-    QString wordListPath_Find;
-    QFile wordListFile_Find;
-    QFile hashListFile_Find;
-    bool wordListOpen = false;
-    bool hashListOpen = false;
-    QMessageBox messageBox;
-    QString hash;
-    QString(*hashFunc)(QString);
-    std::string hashStr;
-    QHash<QString,QString(*)(QString)> methodMap;
+        //Find coincidence function variables.
+        QString hashListPath_Find;
+        QString wordListPath_Find;
+        QFile wordListFile_Find;
+        QFile hashListFile_Find;
+        bool wordListOpen = false;
+        bool hashListOpen = false;
+        QMessageBox messageBox;
+        QString hash;
+        QString(*hashFunc)(QString);
+        std::string hashStr;
+        QHash<QString,QString(*)(QString)> methodMap;
+
 };
 #endif // MAINWINDOW_H
