@@ -5,6 +5,7 @@
 #include <vector>
 #include <QFileDialog>
 #include <QFile>
+#include <QCryptographicHash>
 #include <QHBoxLayout>
 #include <QTextStream>
 #include <QPalette>
@@ -49,6 +50,10 @@ private slots:
     void on_hashInput_editingFinished();
 
     void on_findButton_clicked();
+
+    void on_inputText_textChanged();
+
+    void on_inputModeBox_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;

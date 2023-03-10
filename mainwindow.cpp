@@ -143,12 +143,17 @@ MainWindow::MainWindow(QWidget *parent)
     darkPalette.setColor(QPalette::WindowText, Qt::white);
     QApplication::setPalette(darkPalette);
 
-    ui->comboBox->addItem("SHA160");
-    ui->comboBox->addItem("MD5");
-    ui->comboBox->addItem("SHA256");
-    ui->comboBox->addItem("SHA384");
-    ui->comboBox->addItem("SHA512");
-    ui->comboBox->addItem("SHA224");
+    ui->outputText->setReadOnly(true);
+
+    ui->inputModeBox->addItem("File");
+    ui->inputModeBox->addItem("Text");
+
+    ui->hashBox->addItem("SHA160");
+    ui->hashBox->addItem("MD5");
+    ui->hashBox->addItem("SHA256");
+    ui->hashBox->addItem("SHA384");
+    ui->hashBox->addItem("SHA512");
+    ui->hashBox->addItem("SHA224");
 
     methodMap.emplace("MD5",&::md5);
     methodMap.emplace("SHA256",&::sha256);
@@ -193,7 +198,7 @@ void MainWindow::on_generateButton_clicked()
     targetFile.resize(0);
     QTextStream wordListStream(&wordListFileBase);
     QTextStream targetFileStream(&targetFile);
-    hashFunc = methodMap[ui->comboBox->currentText()];
+    hashFunc = methodMap[ui->hashBox->currentText()];
 
     bool targetMissing = !targetFile.isOpen();
     bool wordlistMissing = !wordListFileBase.isOpen();
@@ -279,5 +284,25 @@ void MainWindow::on_findButton_clicked()
     QMessageBox::critical(this,"＞︿＜","No coincidence found.");
 }
 
+void MainWindow::on_inputText_textChanged()
+{
+    ui->outputText->setPlainText("");
+    hashFunc = methodMap[ui->hashBox->currentText()];
+    QString input = ui->inputText->toPlainText();
+    QStringList inputSplitted = input.split('\n');
+    for(QString& str : inputSplitted)
+    {
+        if(!str.isEmpty())
+        {
+            ui->outputText->insertPlainText(hashFunc(str.toStdString()) + '\n');
+        }
+    }
+}
 
+
+void MainWindow::on_inputModeBox_currentIndexChanged(int index)
+{
+    ui->frame_5->setVisible(index);
+    ui->frame_1->setHidden(index);
+}
 

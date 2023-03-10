@@ -9,7 +9,7 @@ QMessageBox QPushButton
 }
 
 
-#frame_1, #frame_2, #frame_3
+#frame_1, #frame_2, #frame_3, #frame_4, #frame_5
 {
     background-image: url(none);
     background-color: rgba(51, 34, 76, 200);
@@ -45,7 +45,7 @@ QMessageBox QPushButton
     border-color: rgb(182, 0, 220);
 }
 
-#comboBox
+#hashBox, #inputModeBox
 {
     font: 9pt "Bahnschrift";
     background-color: rgb(54, 26, 77);
@@ -53,7 +53,7 @@ QMessageBox QPushButton
     color: rgb(255,255,255);
 }
 
-#encryptionIndication, #hashIndication
+#encryptionIndication, #hashIndication, #inputModeIndication
 {
     font: 19pt "Bahnschrift";
     background-color:rgb(0,0,0,0);
@@ -70,4 +70,14 @@ QMessageBox QPushButton
 {
     border-radius:2px;
     border-color: rgb(182,0,220);
+}
+
+#outputLabel
+{
+    text-align: top-left;
+}
+
+#scrollInput, #scrollOutput
+{
+    background-color: rgba(0,0,0,0);
 }
