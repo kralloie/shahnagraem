@@ -1,5 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
+#
 QString sha224(QString str)
 {
     QByteArray myData = str.toUtf8();
@@ -24,10 +26,50 @@ QString sha384(QString str)
     return result;
 }
 
+QString md4(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Md4);
+    QString result = myHash.toHex();
+    return result;
+}
+
 QString sha1(QString str)
 {
     QByteArray myData = str.toUtf8();
     QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha1);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString sha3_224(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha3_224);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString sha3_256(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha3_256);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString sha3_384(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha3_384);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString sha3_512(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha3_512);
     QString result = myHash.toHex();
     return result;
 }
@@ -44,6 +86,102 @@ QString md5(QString str)
 {
     QByteArray myData = str.toUtf8();
     QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Md5);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString keccak224(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Keccak_224);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString keccak256(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Keccak_256);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString keccak384(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Keccak_384);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString keccak512(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Keccak_512);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString blake2b_160(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Blake2b_160);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString blake2b_256(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Blake2b_256);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString blake2b_384(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Blake2b_384);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString blake2b_512(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Blake2b_512);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString blake2s_128(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Blake2s_128);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString blake2s_160(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Blake2s_160);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString blake2s_224(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Blake2s_224);
+    QString result = myHash.toHex();
+    return result;
+}
+
+QString blake2s_256(QString str)
+{
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Blake2s_256);
     QString result = myHash.toHex();
     return result;
 }
@@ -80,25 +218,60 @@ MainWindow::MainWindow(QWidget *parent)
     darkPalette.setColor(QPalette::WindowText, Qt::white);
     QApplication::setPalette(darkPalette);
 
+
     ui->outputText->setReadOnly(true);
+
 
     ui->inputModeBox->addItem("File");
     ui->inputModeBox->addItem("Text");
 
-    ui->hashBox->addItem("SHA1");
+    ui->hashBox->addItem("MD4");
     ui->hashBox->addItem("MD5");
+    ui->hashBox->addItem("SHA1");
+    ui->hashBox->addItem("SHA224");
     ui->hashBox->addItem("SHA256");
     ui->hashBox->addItem("SHA384");
     ui->hashBox->addItem("SHA512");
-    ui->hashBox->addItem("SHA224");
+    ui->hashBox->addItem("SHA3_224");
+    ui->hashBox->addItem("SHA3_256");
+    ui->hashBox->addItem("SHA3_384");
+    ui->hashBox->addItem("SHA3_512");
+    ui->hashBox->addItem("KECCAK_224");
+    ui->hashBox->addItem("KECCAK_256");
+    ui->hashBox->addItem("KECCAK_384");
+    ui->hashBox->addItem("KECCAK_512");
+    ui->hashBox->addItem("BLAKE2B_160");
+    ui->hashBox->addItem("BLAKE2B_256");
+    ui->hashBox->addItem("BLAKE2B_384");
+    ui->hashBox->addItem("BLAKE2B_512");
+    ui->hashBox->addItem("BLAKE2S_128");
+    ui->hashBox->addItem("BLAKE2S_160");
+    ui->hashBox->addItem("BLAKE2S_224");
+    ui->hashBox->addItem("BLAKE2S_256");
 
+    methodMap.emplace("BLAKE2B_160",&::blake2b_160);
+    methodMap.emplace("BLAKE2B_256",&::blake2b_256);
+    methodMap.emplace("BLAKE2B_384",&::blake2b_384);
+    methodMap.emplace("BLAKE2B_512",&::blake2b_512);
+    methodMap.emplace("BLAKE2S_128",&::blake2s_128);
+    methodMap.emplace("BLAKE2S_160",&::blake2s_160);
+    methodMap.emplace("BLAKE2S_224",&::blake2s_224);
+    methodMap.emplace("BLAKE2S_256",&::blake2s_256);
+    methodMap.emplace("KECCAK_256",&::keccak256);
+    methodMap.emplace("KECCAK_384",&::keccak384);
+    methodMap.emplace("KECCAK_224",&::keccak224);
+    methodMap.emplace("KECCAK_512",&::keccak512);
+    methodMap.emplace("SHA3_256",&::sha3_256);
+    methodMap.emplace("SHA3_384",&::sha3_384);
+    methodMap.emplace("SHA3_224",&::sha3_224);
+    methodMap.emplace("SHA3_512",&::sha3_512);
+    methodMap.emplace("MD4",&::md4);
     methodMap.emplace("MD5",&::md5);
-    methodMap.emplace("SHA256",&::sha256);
     methodMap.emplace("SHA1",&::sha1);
+    methodMap.emplace("SHA224",&::sha224);
+    methodMap.emplace("SHA256",&::sha256);
     methodMap.emplace("SHA384",&::sha384);
     methodMap.emplace("SHA512",&::sha512);
-    methodMap.emplace("SHA224",&::sha224);
-
 
     this->setWindowFlags(Qt::Window);
     this->setFixedSize(790,620);
