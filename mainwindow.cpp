@@ -1,114 +1,51 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-QString sha224(std::string str)
+QString sha224(QString str)
 {
-    unsigned char hash[SHA224_DIGEST_LENGTH];
-    std::string encryptedText;
-
-    SHA224((unsigned char*)str.c_str(), str.length(), hash);
-
-    char hexHash[SHA224_DIGEST_LENGTH * 2 + 1];
-
-    for (int i = 0; i < SHA224_DIGEST_LENGTH; i++) {
-        sprintf(hexHash + i * 2, "%02x", hash[i]);
-    }
-
-    encryptedText = std::string(hexHash);
-
-    return QString::fromStdString(encryptedText);
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha224);
+    QString result = myHash.toHex();
+    return result;
 }
 
-QString sha512(std::string str)
+QString sha512(QString str)
 {
-    unsigned char hash[SHA512_DIGEST_LENGTH];
-    std::string encryptedText;
-
-    SHA512((unsigned char*)str.c_str(), str.length(), hash);
-
-    char hexHash[SHA512_DIGEST_LENGTH * 2 + 1];
-
-    for (int i = 0; i < SHA512_DIGEST_LENGTH; i++) {
-        sprintf(hexHash + i * 2, "%02x", hash[i]);
-    }
-
-    encryptedText = std::string(hexHash);
-
-    return QString::fromStdString(encryptedText);
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha512);
+    QString result = myHash.toHex();
+    return result;
 }
 
-QString sha384(std::string str)
+QString sha384(QString str)
 {
-    unsigned char hash[SHA384_DIGEST_LENGTH];
-    std::string encryptedText;
-
-    SHA384((unsigned char*)str.c_str(), str.length(), hash);
-
-    char hexHash[SHA384_DIGEST_LENGTH * 2 + 1];
-
-    for (int i = 0; i < SHA384_DIGEST_LENGTH; i++) {
-        sprintf(hexHash + i * 2, "%02x", hash[i]);
-    }
-
-    encryptedText = std::string(hexHash);
-
-    return QString::fromStdString(encryptedText);
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha384);
+    QString result = myHash.toHex();
+    return result;
 }
 
-QString sha160(std::string str)
+QString sha1(QString str)
 {
-    unsigned char hash[SHA_DIGEST_LENGTH];
-    std::string encryptedText;
-
-    SHA1((unsigned char*)str.c_str(), str.length(), hash);
-
-    char hexHash[SHA_DIGEST_LENGTH * 2 + 1];
-
-    for (int i = 0; i < SHA_DIGEST_LENGTH; i++) {
-        sprintf(hexHash + i * 2, "%02x", hash[i]);
-    }
-
-    encryptedText = std::string(hexHash);
-
-    return QString::fromStdString(encryptedText);
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha1);
+    QString result = myHash.toHex();
+    return result;
 }
 
-QString sha256(std::string str)
+QString sha256(QString str)
 {
-    unsigned char hash[SHA256_DIGEST_LENGTH];
-    std::string encryptedText;
-
-    SHA256((unsigned char*)str.c_str(), str.length(), hash);
-
-    char hexHash[SHA256_DIGEST_LENGTH * 2 + 1];
-
-    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
-        sprintf(hexHash + i * 2, "%02x", hash[i]);
-    }
-
-    encryptedText = std::string(hexHash);
-
-    return QString::fromStdString(encryptedText);
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Sha256);
+    QString result = myHash.toHex();
+    return result;
 }
 
-QString md5(std::string str)
+QString md5(QString str)
 {
-    EVP_MD_CTX *mdctx = EVP_MD_CTX_new();
-    EVP_DigestInit_ex(mdctx, EVP_md5(), NULL);
-    EVP_DigestUpdate(mdctx, str.c_str(), str.size());
-    unsigned char hash[EVP_MAX_MD_SIZE];
-    unsigned int hashLen;
-    EVP_DigestFinal_ex(mdctx, hash, &hashLen);
-
-
-    std::stringstream StrStream;
-    StrStream << std::hex << std::setfill('0');
-    for (unsigned int i = 0; i < hashLen; ++i) {
-        StrStream << std::setw(2) << static_cast<unsigned int>(hash[i]);
-    }
-
-    EVP_MD_CTX_free(mdctx);
-
-    return QString::fromStdString(StrStream.str());
+    QByteArray myData = str.toUtf8();
+    QByteArray myHash = QCryptographicHash::hash(myData, QCryptographicHash::Md5);
+    QString result = myHash.toHex();
+    return result;
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -148,7 +85,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->inputModeBox->addItem("File");
     ui->inputModeBox->addItem("Text");
 
-    ui->hashBox->addItem("SHA160");
+    ui->hashBox->addItem("SHA1");
     ui->hashBox->addItem("MD5");
     ui->hashBox->addItem("SHA256");
     ui->hashBox->addItem("SHA384");
@@ -157,7 +94,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     methodMap.emplace("MD5",&::md5);
     methodMap.emplace("SHA256",&::sha256);
-    methodMap.emplace("SHA160",&::sha160);
+    methodMap.emplace("SHA1",&::sha1);
     methodMap.emplace("SHA384",&::sha384);
     methodMap.emplace("SHA512",&::sha512);
     methodMap.emplace("SHA224",&::sha224);
@@ -216,7 +153,7 @@ void MainWindow::on_generateButton_clicked()
         QString line = wordListStream.readLine();
         if(!line.isEmpty())
         {
-            QString data = hashFunc(line.toStdString());
+            QString data = hashFunc(line);
             targetFileStream << data << '\n';
         }
     }
@@ -294,7 +231,7 @@ void MainWindow::on_inputText_textChanged()
     {
         if(!str.isEmpty())
         {
-            ui->outputText->insertPlainText(hashFunc(str.toStdString()) + '\n');
+            ui->outputText->insertPlainText(hashFunc(str) + '\n');
         }
     }
 }

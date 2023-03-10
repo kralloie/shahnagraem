@@ -71,8 +71,8 @@ private:
     bool hashListOpen = false;
     QMessageBox messageBox;
     QString hash;
-    QString(*hashFunc)(std::string);
+    QString(*hashFunc)(QString);
     std::string hashStr;
-    QHash<QString,QString(*)(std::string)> methodMap;
+    QHash<QString,QString(*)(QString)> methodMap;
 };
 #endif // MAINWINDOW_H
