@@ -66,12 +66,6 @@ QMessageBox QPushButton
     border-radius:5px;
 }
 
-#comboBox
-{
-    border-radius:2px;
-    border-color: rgb(182,0,220);
-}
-
 #outputLabel
 {
     text-align: top-left;
