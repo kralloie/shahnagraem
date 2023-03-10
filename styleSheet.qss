@@ -53,6 +53,16 @@ QMessageBox QPushButton
     color: rgb(255,255,255);
 }
 
+#hashBox QScrollBar, #inputModeBox QScrollBar
+{
+    background-color:rgb(54, 26, 77);
+}
+
+#hashBox QAbstractItemView, #inputModeBox QAbstractItemView
+{
+    background-color:rgb(54, 26, 77);
+}
+
 #encryptionIndication, #hashIndication, #inputModeIndication
 {
     font: 19pt "Bahnschrift";

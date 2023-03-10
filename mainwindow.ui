@@ -505,6 +505,9 @@ background-color: argb(39, 45, 61,0);</string>
         <height>211</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
