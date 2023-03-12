@@ -68,7 +68,7 @@ class MainWindow : public QMainWindow
         bool hashListOpen = false;
         QMessageBox messageBox;
         QString hash;
-        QHash<QString,QCryptographicHash::Algorithm> methodMap;
+        QMap<QString,QCryptographicHash::Algorithm> methodMap;
 
 };
 #endif // MAINWINDOW_H

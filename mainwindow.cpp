@@ -15,8 +15,11 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
 
+//Palette setup
+{
     QColor baseColor(QStringLiteral("#32383D"));
     QColor complementColor(QStringLiteral("#202529"));
     QColor disabledColor(QStringLiteral("#4C555C"));
@@ -42,61 +45,43 @@ MainWindow::MainWindow(QWidget *parent)
     darkPalette.setColor(QPalette::WindowText, Qt::white);
     darkPalette.setColor(QPalette::WindowText, Qt::white);
     QApplication::setPalette(darkPalette);
-
+}
 
     ui->outputText->setReadOnly(true);
-
-
     ui->inputModeBox->addItem("File");
     ui->inputModeBox->addItem("Text");
 
-    ui->hashBox->addItem("MD4");
-    ui->hashBox->addItem("MD5");
-    ui->hashBox->addItem("SHA1");
-    ui->hashBox->addItem("SHA224");
-    ui->hashBox->addItem("SHA256");
-    ui->hashBox->addItem("SHA384");
-    ui->hashBox->addItem("SHA512");
-    ui->hashBox->addItem("SHA3_224");
-    ui->hashBox->addItem("SHA3_256");
-    ui->hashBox->addItem("SHA3_384");
-    ui->hashBox->addItem("SHA3_512");
-    ui->hashBox->addItem("KECCAK_224");
-    ui->hashBox->addItem("KECCAK_256");
-    ui->hashBox->addItem("KECCAK_384");
-    ui->hashBox->addItem("KECCAK_512");
-    ui->hashBox->addItem("BLAKE2B_160");
-    ui->hashBox->addItem("BLAKE2B_256");
-    ui->hashBox->addItem("BLAKE2B_384");
-    ui->hashBox->addItem("BLAKE2B_512");
-    ui->hashBox->addItem("BLAKE2S_128");
-    ui->hashBox->addItem("BLAKE2S_160");
-    ui->hashBox->addItem("BLAKE2S_224");
-    ui->hashBox->addItem("BLAKE2S_256");
+//Map setup
+{
+    methodMap.insert("BLAKE2B_160",QCryptographicHash::Blake2b_160);
+    methodMap.insert("BLAKE2B_256",QCryptographicHash::Blake2b_256);
+    methodMap.insert("BLAKE2B_384",QCryptographicHash::Blake2b_384);
+    methodMap.insert("BLAKE2B_512",QCryptographicHash::Blake2b_512);
+    methodMap.insert("BLAKE2S_128",QCryptographicHash::Blake2s_128);
+    methodMap.insert("BLAKE2S_160",QCryptographicHash::Blake2s_160);
+    methodMap.insert("BLAKE2S_224",QCryptographicHash::Blake2s_224);
+    methodMap.insert("BLAKE2S_256",QCryptographicHash::Blake2s_256);
+    methodMap.insert("KECCAK_256",QCryptographicHash::Keccak_256);
+    methodMap.insert("KECCAK_384",QCryptographicHash::Keccak_384);
+    methodMap.insert("KECCAK_224",QCryptographicHash::Keccak_224);
+    methodMap.insert("KECCAK_512",QCryptographicHash::Keccak_512);
+    methodMap.insert("SHA3_256",QCryptographicHash::Sha3_256);
+    methodMap.insert("SHA3_384",QCryptographicHash::Sha3_384);
+    methodMap.insert("SHA3_224",QCryptographicHash::Sha3_224);
+    methodMap.insert("SHA3_512",QCryptographicHash::Sha3_512);
+    methodMap.insert("MD4",QCryptographicHash::Md4);
+    methodMap.insert("MD5",QCryptographicHash::Md5);
+    methodMap.insert("SHA1",QCryptographicHash::Sha1);
+    methodMap.insert("SHA224",QCryptographicHash::Sha224);
+    methodMap.insert("SHA256",QCryptographicHash::Sha256);
+    methodMap.insert("SHA384",QCryptographicHash::Sha384);
+    methodMap.insert("SHA512",QCryptographicHash::Sha512);
+}
 
-    methodMap.emplace("BLAKE2B_160",QCryptographicHash::Blake2b_160);
-    methodMap.emplace("BLAKE2B_256",QCryptographicHash::Blake2b_256);
-    methodMap.emplace("BLAKE2B_384",QCryptographicHash::Blake2b_384);
-    methodMap.emplace("BLAKE2B_512",QCryptographicHash::Blake2b_512);
-    methodMap.emplace("BLAKE2S_128",QCryptographicHash::Blake2s_128);
-    methodMap.emplace("BLAKE2S_160",QCryptographicHash::Blake2s_160);
-    methodMap.emplace("BLAKE2S_224",QCryptographicHash::Blake2s_224);
-    methodMap.emplace("BLAKE2S_256",QCryptographicHash::Blake2s_256);
-    methodMap.emplace("KECCAK_256",QCryptographicHash::Keccak_256);
-    methodMap.emplace("KECCAK_384",QCryptographicHash::Keccak_384);
-    methodMap.emplace("KECCAK_224",QCryptographicHash::Keccak_224);
-    methodMap.emplace("KECCAK_512",QCryptographicHash::Keccak_512);
-    methodMap.emplace("SHA3_256",QCryptographicHash::Sha3_256);
-    methodMap.emplace("SHA3_384",QCryptographicHash::Sha3_384);
-    methodMap.emplace("SHA3_224",QCryptographicHash::Sha3_224);
-    methodMap.emplace("SHA3_512",QCryptographicHash::Sha3_512);
-    methodMap.emplace("MD4",QCryptographicHash::Md4);
-    methodMap.emplace("MD5",QCryptographicHash::Md5);
-    methodMap.emplace("SHA1",QCryptographicHash::Sha1);
-    methodMap.emplace("SHA224",QCryptographicHash::Sha224);
-    methodMap.emplace("SHA256",QCryptographicHash::Sha256);
-    methodMap.emplace("SHA384",QCryptographicHash::Sha384);
-    methodMap.emplace("SHA512",QCryptographicHash::Sha512);
+    for(QMap<QString,QCryptographicHash::Algorithm>::Iterator it = methodMap.begin(); it != methodMap.end(); it++)
+    {
+        ui->hashBox->addItem(it.key());
+    }
 
     this->setWindowFlags(Qt::Window);
     this->setFixedSize(790,620);
