@@ -9,7 +9,7 @@ QMessageBox QPushButton
 }
 
 
-#frame_1, #frame_2, #frame_3, #frame_4, #frame_5
+#frame_1, #frame_2, #frame_3, #frame_4, #frame_5, #frame_6, #frame_7
 {
     background-image: url(none);
     background-color: rgba(51, 34, 76, 200);
@@ -45,7 +45,7 @@ QMessageBox QPushButton
     border-color: rgb(182, 0, 220);
 }
 
-#hashBox, #inputModeBox
+#hashBox, #inputModeBox, #hashBox_Find, #inputModeBox_Find
 {
     font: 9pt "Bahnschrift";
     background-color: rgb(54, 26, 77);
@@ -53,7 +53,7 @@ QMessageBox QPushButton
     color: rgb(255,255,255);
 }
 
-#hashBox QScrollBar, #inputModeBox QScrollBar
+#hashBox QScrollBar, #inputModeBox QScrollBar, #hashBox_Find QScrollBar, #inputModeBox_Find QScrollBar
 {
     background-color:rgb(54, 26, 77);
 }
@@ -63,7 +63,7 @@ QMessageBox QPushButton
     background-color:rgb(54, 26, 77);
 }
 
-#encryptionIndication, #hashIndication, #inputModeIndication
+#encryptionIndication, #hashIndication, #inputModeIndication, #inputModeIndication_Find, #encryptionIndication_Find
 {
     font: 19pt "Bahnschrift";
     background-color:rgb(0,0,0,0);
@@ -81,7 +81,8 @@ QMessageBox QPushButton
     text-align: top-left;
 }
 
-#scrollInput QWidget , #scrollOutput QWidget
+#scrollInput QWidget , #scrollOutput QWidget, #scrollInput_Find QWidget
 {
     background-color: rgb(29, 27, 27);
 }
+
