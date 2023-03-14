@@ -50,6 +50,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->outputText->setReadOnly(true);
     ui->inputModeBox->addItem("File");
     ui->inputModeBox->addItem("Text");
+    ui->inputModeBox_Find->addItem("File");
+    ui->inputModeBox_Find->addItem("Text");
 
 //Map setup
 {
@@ -81,6 +83,7 @@ MainWindow::MainWindow(QWidget *parent)
     for(QMap<QString,QCryptographicHash::Algorithm>::Iterator it = methodMap.begin(); it != methodMap.end(); it++)
     {
         ui->hashBox->addItem(it.key());
+        ui->hashBox_Find->addItem(it.key());
     }
 
     this->setWindowFlags(Qt::Window);
@@ -175,15 +178,34 @@ void MainWindow::on_hashInput_editingFinished()
 
 void MainWindow::on_findButton_clicked()
 {
+    if(hash.isEmpty())
+    {
+        QMessageBox::warning(this,"Parameter missing","Please input your hash for the comparison.");
+        return;
+    }
+
+    if(ui->inputModeBox_Find->currentText() == "Text")
+    {
+        QString text = ui->inputText_Find->toPlainText();
+        QStringList textSplitted = text.split('\n');
+
+        for(QString& str : textSplitted)
+        {
+            if(hashFunc(str,methodMap[ui->hashBox_Find->currentText()]) == hash)
+            {
+                QMessageBox::information(this,"\\^o^/","The hash matches with the word: " + str);
+                return;
+            }
+        }
+
+        QMessageBox::critical(this,"＞︿＜","No coincidence found.");
+        return;
+    }
+
     if(!hashListOpen || !wordListOpen)
     {
         QString errorMessage = (!hashListOpen && !wordListOpen) ? "Word list and Hash list are missing!" :(!wordListOpen) ? "Word list is missing!" : "Hash List is missing!";
         QMessageBox::warning(this,"List(s) missing",errorMessage);
-        return;
-    }
-    else if(hash.isEmpty())
-    {
-        QMessageBox::warning(this,"Parameter missing","Please input your hash for the comparison.");
         return;
     }
 
@@ -196,8 +218,7 @@ void MainWindow::on_findButton_clicked()
         QString wordLine = wordListStream.readLine();
         if(hash == hashLine)
         {
-            QString popmsg = "The hash matches with the word: " + wordLine;
-            QMessageBox::information(this,"\\^o^/",popmsg);
+            QMessageBox::information(this,"\\^o^/","The hash matches with the word: " + wordLine);
             return;
         }
     }
@@ -224,6 +245,14 @@ void MainWindow::on_inputModeBox_currentIndexChanged(int index)
 {
     ui->frame_5->setVisible(index);
     ui->frame_1->setHidden(index);
+}
+
+
+
+void MainWindow::on_inputModeBox_Find_currentIndexChanged(int index)
+{
+    ui->frame_FindText->setVisible(index);
+    ui->frame_FindFile->setHidden(index);
 }
 
 

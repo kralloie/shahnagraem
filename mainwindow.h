@@ -52,7 +52,9 @@ class MainWindow : public QMainWindow
 
         void on_inputModeBox_currentIndexChanged(int index);
 
-    private:
+        void on_inputModeBox_Find_currentIndexChanged(int index);
+
+private:
         Ui::MainWindow *ui;
 
         //Wordlist generator variables.
