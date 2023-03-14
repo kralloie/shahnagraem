@@ -90,6 +90,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->setFixedSize(790,620);
 
     connect(ui->hashBox,&QComboBox::currentIndexChanged, ui->inputText, &QPlainTextEdit::textChanged);
+    ui->inputText_Find->setFrameStyle(QFrame::NoFrame);
+    ui->inputText->setFrameStyle(QFrame::NoFrame);
+    ui->outputText->setFrameStyle(QFrame::NoFrame);
 }
 
 MainWindow::~MainWindow()
@@ -173,7 +176,7 @@ void MainWindow::on_openWordList_clicked()
 
 void MainWindow::on_hashInput_editingFinished()
 {
-    hash = ui->hashInput->text();
+    hash = ui->hashInput->text().trimmed();
 }
 
 void MainWindow::on_findButton_clicked()
