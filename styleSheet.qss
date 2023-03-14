@@ -8,7 +8,6 @@ QMessageBox QPushButton
     color: rgb(0,0,0)
 }
 
-
 #frame_1, #frame_2, #frame_3, #frame_4, #frame_5, #frame_6, #frame_7
 {
     background-image: url(none);
@@ -58,7 +57,7 @@ QMessageBox QPushButton
     background-color:rgb(54, 26, 77);
 }
 
-#hashBox QAbstractItemView, #inputModeBox QAbstractItemView
+#hashBox QAbstractItemView, #inputModeBox QAbstractItemView, #hashBox_Find QAbstractItemView, #inputModeBox_Find QAbstractItemView
 {
     background-color:rgb(54, 26, 77);
 }
@@ -85,4 +84,5 @@ QMessageBox QPushButton
 {
     background-color: rgb(29, 27, 27);
 }
+
 
