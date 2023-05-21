@@ -23,10 +23,6 @@ TRANSLATIONS += \
 CONFIG += lrelease
 CONFIG += embed_translations
 
-INCLUDEPATH += C:/Qt/Tools/OpenSSL/Win_x64/include
-INCLUDEPATH += D:\json-develop\include
-LIBS += -LC:/Qt/Tools/OpenSSL/Win_x64/lib -llibssl
-LIBS += -LC:/Qt/Tools/OpenSSL/Win_x64/lib -llibcrypto
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

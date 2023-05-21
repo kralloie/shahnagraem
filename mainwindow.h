@@ -13,7 +13,6 @@
 #include <QMessageBox>
 #include <openssl/sha.h>
 #include <openssl/evp.h>
-#include <nlohmann/json.hpp>
 #include <fstream>
 #include <string>
 #include <sstream>
