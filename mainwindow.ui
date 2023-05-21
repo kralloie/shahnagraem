@@ -79,7 +79,7 @@
       <string>Select Target File</string>
      </property>
      <property name="icon">
-      <iconset resource="../build-WordListMaker-Desktop_Qt_6_4_2_MSVC2019_64bit-Release/release/qmake_qmake_qm_files.qrc">
+      <iconset resource="../build-WordListMaker-Qt6-Debug/qmake_qmake_qm_files.qrc">
        <normaloff>:/i18n/WordListMaker_en_US.qm</normaloff>:/i18n/WordListMaker_en_US.qm</iconset>
      </property>
     </widget>
@@ -431,7 +431,7 @@ background-color: argb(39, 45, 61,0);</string>
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Encryption method:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Encryption method:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QComboBox" name="hashBox">
@@ -485,7 +485,7 @@ background-color: argb(39, 45, 61,0);</string>
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Input type:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Input type:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QComboBox" name="inputModeBox">
@@ -627,7 +627,7 @@ background-color: argb(39, 45, 61,0);</string>
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Encryption method:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Encryption method:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QComboBox" name="hashBox_Find">
@@ -681,7 +681,7 @@ background-color: argb(39, 45, 61,0);</string>
        <string notr="true"/>
       </property>
       <property name="text">
-       <string>Input type:</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Input type:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QComboBox" name="inputModeBox_Find">
@@ -715,14 +715,14 @@ background-color: argb(39, 45, 61,0);</string>
      <x>0</x>
      <y>0</y>
      <width>790</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../build-WordListMaker-Desktop_Qt_6_4_2_MSVC2019_64bit-Release/release/qmake_qmake_qm_files.qrc"/>
+  <include location="../build-WordListMaker-Qt6-Debug/qmake_qmake_qm_files.qrc"/>
  </resources>
  <connections/>
 </ui>
